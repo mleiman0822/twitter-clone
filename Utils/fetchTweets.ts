@@ -1,4 +1,4 @@
-import { Tweet } from '../../typings'
+import { Tweet } from '../typings'
 
 
 export const fetchTweets = async () => {
