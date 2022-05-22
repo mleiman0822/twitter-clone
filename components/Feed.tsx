@@ -34,9 +34,8 @@ function Feed({ tweets: tweetsProp }: Props) {
             onClick={handleRefresh}
             />
         </div>
-        {/* Tweet box */}
         <div>
-            <TweetBox/>
+            <TweetBox setTweets={setTweets}/>
         </div>
         <div>
             {tweets.map(tweet => (
