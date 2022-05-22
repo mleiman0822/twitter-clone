@@ -12,6 +12,8 @@ import {fetchComments} from '../Utils/fetchComments'
 import { useEffect } from 'react'
 import { useSession } from 'next-auth/react'
 import toast from 'react-hot-toast'
+import { fetchTweets } from '../Utils/fetchTweets';
+
 
 
 interface Props{
@@ -28,6 +30,8 @@ function Tweet({tweet}: Props) {
     const refreshComments = async () => {
         const comments: Comment[] = await fetchComments(tweet._id)
         setComments(comments);
+        fetchTweets();
+
     }
 
     useEffect(() => {
@@ -59,6 +63,8 @@ function Tweet({tweet}: Props) {
     setInput('');
     setCommentBoxVisible(false);
     refreshComments();
+    fetchTweets();
+
         
     }
 

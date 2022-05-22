@@ -14,6 +14,7 @@ import { fetchTweets } from '../Utils/fetchTweets';
 import toast from 'react-hot-toast';
 
 
+
 interface Props {
     setTweets: Dispatch<SetStateAction<Tweet[]>>
 }
@@ -56,6 +57,7 @@ function TweetBox({ setTweets }: Props) {
         toast('Tweet Posted!', {
             icon: '🚀'
         })
+        fetchTweets();
 
         return json;
     }
@@ -67,6 +69,8 @@ function TweetBox({ setTweets }: Props) {
         setInput('');
         setImage('');
         setImageUrlBoxIsOpen(false);
+        fetchTweets();
+        
     }
 
   return (
